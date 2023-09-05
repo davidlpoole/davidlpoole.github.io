@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>
       CSS Concepts - What is the difference between Margin, Border, and Padding?
@@ -29,21 +29,81 @@
 
     <div class="main">
       <h1>What is the difference between Margin, Border, and Padding?</h1>
+      <h2>TLDR: padding is the spacing between the actual content and the border, and margin is the space outside the border</h2>
       <h3>06 September 2023</h3>
       <div class="list-body">
+        <h2>Intro to the CSS box model</h3>
         <p>
-          Te Houtaewa was the fastest runner of his day and played many pranks
-          on his peoples enemies. One morning his mother wanted kumara for the
-          hangi (earth oven) and asked Te Houtaewa to go to the gardens at Te
-          Kao, a short distance away. He agreed to fetch the kumara and told his
-          mother to prepare the hangi.
+          When designing a web page using HTML and CSS (Cascading Style Sheets),
+          every element placed on the page (such as a `div` or `img`) are
+          represented as a box.
         </p>
         <p>
-          Te Houtaewa was the fastest runner of his day and played many pranks
-          on his peoples enemies. One morning his mother wanted kumara for the
-          hangi (earth oven) and asked Te Houtaewa to go to the gardens at Te
-          Kao, a short distance away. He agreed to fetch the kumara and told his
-          mother to prepare the hangi.
+          This can be seen by opening up the chrome developer tools while on a
+          web page (`command + opt + i` on a mac), and navigating to the
+          Inspector tab of the dev tools.
+        </p>
+        <p>
+          Selecting an element in the Inspector on the left of the devtools will
+          update the 'Box Model' image on the right hand side under 'Layout'.
+        </p>
+        <img
+          src="/images/box-model.png"
+          alt="screenshot of the box model from chrome dev tools"
+        />
+        <p>
+          From the Box Model we can see that there are 4 different dimensions
+          that determine how an element is displayed, and these are the size of
+          the content, padding, border and margin.
+        </p>
+        <p>
+          Double-clicking and editing any of the numbers in the DevTools box
+          model will update the element live on the screen and is an easy way to
+          quickly see what difference a change to the CSS would make.
+        </p>
+        <h2>The difference between content, margin, border and padding</h2>
+        <h3>Content</h3>
+        <p>
+          The content is the actual content of the element, like text or images
+          - this content will determine the dimensions in addition to the height
+          and width CSS properties.
+        </p>
+        <h3>Margin, Border, and Padding</h3>
+        <p>
+          The other three sections are defined in the CSS by a top, right,
+          bottom, left dimension.
+        </p>
+        <p>
+          You might set these on individual sides like this:<br>
+          padding-top: 5px; <br>
+          border-bottom: 1px; <br>
+          padding-left: 20px;
+        </p>
+        <p>
+          You can also use shorthand clockwise notation by referencing just
+          either padding, border or padding as follows using the order of top,
+          right, bottom, left: <br>
+          margin: 10px 20px 30px 20px; <br>
+          this would give a 10px spacing at the top of the element, 20px to the
+          right, 30px underneath, and 20px on the left.
+        </p>
+        <h3>Border</h3>
+        <p>
+          After the actual content, the border is the next most obvious part of
+          the model, as it is quite common to add a border around an element and
+          the thickness can be set, for example it might be 1px thick. When
+          setting the border in the CSS style, the easiest way is to use the
+          shorthand version which takes parameters of style, thickness and
+          colour as so: <br>
+          border: solid 1px black;<br>
+          which would give a single pixel black border around the content.
+        </p>
+        <h3>Margin and Padding</h3>
+        <p>Then we have the less obvious (to me) sections, I think I get confused because often there is no visible border, therefore padding and margin appear to do the same thing.</p>
+        <p>Padding is the space between the content and the border.</p>
+        <p>
+          Margin is the outermost space outside of the border, I usually remember
+          this by thinking it's like the margin on a piece of paper.
         </p>
       </div>
       <p><a href="/">Go back to home page</a></p>

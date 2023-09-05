@@ -26,11 +26,9 @@ li {
 
 h1,
 h2,
-h3 {
-  padding: 1vw;
-}
-
-p {
+h3,
+p,
+img {
   padding: 1vw;
 }
 
@@ -106,4 +104,8 @@ p {
   .large {
     display: none;
   }
+}
+
+.example {
+  border: solid 1px red;
 }
