@@ -3,52 +3,71 @@
     <title>My blog</title>
     <link rel="stylesheet" href="main.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="David Poole's blog for Dev Academy Aotearoa Foundation Bootcamp, with technical and cultural articles"
+    />
   </head>
   <body>
-    <header>
-      <div id="title">Kia ora Taiao! (Hello World!)</div>
-    </header>
+    <div class="header">
+      <div class="nav large">
+        <div id="title">
+          <a href="/">DAVIDPOOLE</a>
+        </div>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="#">About</a>
+          <a href="#">Technical Blog</a>
+          <a href="#">Cultural Blog</a>
+        </div>
+      </div>
+      <div class="nav small">
+        <div id="title">
+          <a href="#">DP</a>
+        </div>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="#">About</a>
+          <a href="#">Technical</a>
+          <a href="#">Cultural</a>
+        </div>
+      </div>
+    </div>
 
-    <main>
+    <div class="main">
       <div id="intro">
-        <ul>
-          <li class="li-name">I'm David Poole</li>
-          <li class="li-from">
-            based in Tāmaki Makaurau, Aotearoa (Auckland, New Zealand)
-          </li>
-          <li class="li-study">
-            currently studying Applied Software Development at Te Kura Hangarau
-            o Aotearoa (Dev Academy Aotearoa)
-          </li>
-          <li class="li-enjoy">I enjoy rock climbing, hiking, and camping.</li>
-        </ul>
         <p>
-          This is the beginning of my website home page for the
-          <strong>Dev Academy Aotearoa</strong> 'Foundations' bootcamp...
+          Hello 🤙<br />
+          I'm studying at
+          <strong>Dev Academy Aotearoa</strong>
+          and here are some of the articles I've produced during the Foundations
+          course...
         </p>
       </div>
-
-      <div id="articles">
-        <div class="category" id="technical">
-          <div class="article-heading">Technical</div>
-          <ul>
-            <li><a href="#">CSS Concepts</a></li>
-          </ul>
+      <div class="articles">
+        <div id="technical">
+          <div class="list-heading">Technical</div>
+          <div class="list-body">
+            <ul>
+              <li><a href="#">CSS Concepts</a></li>
+            </ul>
+          </div>
         </div>
-
-        <div class="category" id="cultural">
-          <div class="article-heading">Cultural</div>
-          <ul>
-            <li>
-              <a href="blog/te-houtaewa-template.html"
-                >The Story of Te Houtaewa</a
-              >
-            </li>
-            <li><a href="#">Identity, Values, and Strengths</a></li>
-            <li><a href="#">Learning Plan</a></li>
-          </ul>
+        <div id="cultural">
+          <div class="list-heading">Cultural</div>
+          <div class="list-body">
+            <ul>
+              <li>
+                <a href="blog/te-houtaewa-template.html">
+                  The Story of Te Houtaewa
+                </a>
+              </li>
+              <li><a href="#">Identity, Values, and Strengths</a></li>
+              <li><a href="#">Learning Plan</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </main>
+    </div>
   </body>
 </html>
