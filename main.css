@@ -3,35 +3,66 @@ html {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: black;
   color: white;
+  padding: 20px;
 }
 
 a {
   color: mediumspringgreen;
+  text-decoration-line: none;
 }
 
 a:hover {
   color: deeppink;
+  /* text-decoration-line: underline; */
 }
 
-#header {
+#title {
+  font-size: 2rem;
 }
 
 #articles {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  padding-top: 10px;
+}
+
+#intro ul {
+  list-style: none;
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
+}
+
+#intro li {
+  padding-bottom: 10px;
+}
+
+.li-name::before {
+  content: '🤙 ';
+}
+.li-from::before {
+  content: '📍 ';
+}
+.li-study::before {
+  content: '🌱 ';
+}
+.li-enjoy::before {
+  content: '🧗 ';
+}
+
+.article-heading {
+  font-size: 1.5rem;
 }
 
 .category {
   background-color: rgb(36, 36, 36);
   border-radius: 10px;
-  margin: 20px;
   padding: 20px;
 }
 
-#technical {
-  flex-basis: 50%;
-}
-
-#cultural {
-  flex-basis: 50%;
+@media (max-width: 800px) {
+  #articles {
+    grid-template-columns: 1fr;
+  }
 }
