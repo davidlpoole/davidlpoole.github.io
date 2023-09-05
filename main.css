@@ -24,6 +24,16 @@ li {
   padding-bottom: 0.5em;
 }
 
+h1,
+h2,
+h3 {
+  padding: 1vw;
+}
+
+p {
+  padding: 1vw;
+}
+
 .header {
   padding: 3vw;
   justify-content: space-between;
