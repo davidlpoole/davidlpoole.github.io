@@ -90,7 +90,7 @@ img {
 }
 
 .list-body {
-  font-size: calc(1em + 1vmin);
+  /* font-size: calc(1em + 1vmin); */
   padding: 1vw 0 1vw 0;
 }
 
