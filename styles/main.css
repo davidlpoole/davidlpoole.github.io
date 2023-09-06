@@ -4,6 +4,7 @@
   margin: 0;
 }
 
+/* LIGHT AND DARK MODE */
 /* Dark mode by default*/
 :root {
   --body-bg: #000000;
@@ -32,6 +33,7 @@ a:hover {
   }
 }
 
+/* Default font etc */
 html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -40,9 +42,24 @@ html {
   color: var(--body-color);
 }
 
+/* RESPONSIVE */
+/* 2 columns on large screens */
+.lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* single column on small screens */
+@media (max-width: 700px) {
+  .lists {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Generic element styling */
 li {
-  padding-bottom: 0.5em;
-  margin-left: 1em;
+  padding-bottom: 0.5rem;
+  margin-left: 1rem;
 }
 
 h1,
@@ -53,15 +70,8 @@ img {
   padding: 1vw 0 1vw 0;
 }
 
-.img-center {
-  max-width: 50vmin;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-
+/* classes */
 .header {
-  padding: 3vw;
   justify-content: space-between;
   top: 0;
   position: -webkit-sticky;
@@ -73,49 +83,46 @@ img {
   background: rgba(255, 255, 255, 0);
 }
 
+.title {
+  font-size: 2rem;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* not currently used */
 .nav-links {
   display: flex;
   gap: 3vw;
 }
 
-.title {
-  font-size: 2em;
-  font-weight: bolder;
-  text-decoration: none;
+/* Text size modifiers */
+.t-4_5 {
+  font-size: calc(1rem + 4.5vmin);
 }
 
-.main {
+.t-2 {
+  font-size: calc(1rem + 2vmin);
+}
+
+/* spacing modifiers */
+.p-3 {
   padding: 3vw;
 }
 
-.intro {
-  font-size: calc(1em + 4.5vmin);
+.pb-1 {
+  padding-bottom: 1vw;
 }
 
-.list-heading {
-  font-size: calc(1em + 2vmin);
-}
-
-.list-body {
-  padding: 1vw 0 1vw 0;
-}
-
-/* 2 columns on large screens */
-.lists {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 3vw;
-}
-
-/* single column on small screens */
-@media (max-width: 700px) {
-  .lists {
-    grid-template-columns: 1fr;
-  }
+/* positioning */
+.img-center {
+  max-width: 50vmin;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
