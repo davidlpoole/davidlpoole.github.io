@@ -20,6 +20,10 @@ a:hover {
   color: deeppink;
 }
 
+.light-img {
+  display: none;
+}
+
 /* Light mode override */
 @media (prefers-color-scheme: light) {
   :root {
@@ -30,6 +34,19 @@ a:hover {
   a {
     color: rgb(81, 69, 255);
     text-decoration: underline;
+  }
+
+  .light-img {
+    display: block;
+  }
+  .dark-img {
+    display: none;
+  }
+}
+
+@media print {
+  .hide-print {
+    display: none;
   }
 }
 
@@ -49,10 +66,21 @@ html {
   grid-template-columns: 1fr 1fr;
 }
 
+.small {
+  display: none;
+}
+
 /* single column on small screens */
 @media (max-width: 700px) {
   .lists {
     grid-template-columns: 1fr;
+  }
+
+  .small {
+    display: block;
+  }
+  .large {
+    display: none;
   }
 }
 
@@ -84,9 +112,10 @@ img {
 }
 
 .title {
-  font-size: 2rem;
   font-weight: bolder;
   text-decoration: none;
+  font-size: 3rem;
+  font-family: 'Shadows Into Light Two', sans-serif;
 }
 
 .nav {
