@@ -146,7 +146,7 @@ img {
 /* Text size modifiers */
 .t-4_5 {
   font-size: calc(1rem + 3vmin);
-  line-height: calc(1rem + 5vmin);
+  line-height: calc(2rem + 3vmin);
   font-family: 'DM Serif Display', serif;
 }
 
