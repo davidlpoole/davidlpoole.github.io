@@ -20,7 +20,7 @@ a:hover {
   color: deeppink;
 }
 
-.light-img {
+.light {
   display: none;
 }
 
@@ -36,14 +36,15 @@ a:hover {
     text-decoration: underline;
   }
 
-  .light-img {
+  .light {
     display: block;
   }
-  .dark-img {
+  .dark {
     display: none;
   }
 }
 
+/* hide elements if not required when printing */
 @media print {
   .hide-print {
     display: none;
@@ -124,11 +125,11 @@ img {
   align-items: center;
 }
 
-/* not currently used */
+/* in case i bring back nav bar links
 .nav-links {
   display: flex;
   gap: 3vw;
-}
+} */
 
 /* Text size modifiers */
 .t-4_5 {
