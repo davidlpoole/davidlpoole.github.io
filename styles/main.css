@@ -150,6 +150,12 @@ img {
   padding-bottom: 1vw;
 }
 
+.max-width-60 {
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* positioning */
 .img-center {
   max-width: 50vmin;
