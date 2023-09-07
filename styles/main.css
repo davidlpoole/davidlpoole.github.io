@@ -55,9 +55,9 @@ a:hover {
 
 /* Default font etc */
 html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--body-bg, black);
   color: var(--body-color, white);
   max-width: 1000px;
@@ -99,7 +99,11 @@ li {
 
 h1,
 h2,
-h3,
+h3 {
+  padding: 1vw 0 1vw 0;
+  font-family: 'DM Serif Display', serif;
+}
+
 p,
 img {
   padding: 1vw 0 1vw 0;
@@ -124,7 +128,8 @@ img {
   font-weight: bolder;
   text-decoration: none;
   font-size: 3rem;
-  font-family: 'Shadows Into Light Two', sans-serif;
+  /* font-family: 'Shadows Into Light Two', sans-serif; */
+  font-family: 'DM Serif Display', serif;
 }
 
 .nav {
@@ -143,10 +148,12 @@ img {
 .t-4_5 {
   font-size: calc(1rem + 3vmin);
   line-height: calc(1rem + 5vmin);
+  font-family: 'DM Serif Display', serif;
 }
 
 .t-2 {
   font-size: calc(1rem + 2vmin);
+  font-family: 'DM Serif Display', serif;
 }
 
 /* spacing modifiers */
