@@ -180,7 +180,13 @@ img {
 
 .github-logo {
   height: calc(1rem + 2vmin);
-  width: auto;
+  width: calc(1rem + 2vmin);
+  padding: 0px;
+  border-radius: 50%;
+}
+
+.github-logo:hover {
+  background-color: var(--a-hover-color, deeppink);
 }
 
 .bg-one {
