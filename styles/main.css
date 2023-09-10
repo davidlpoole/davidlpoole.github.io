@@ -178,6 +178,11 @@ img {
   display: block;
 }
 
+.github-logo {
+  height: calc(1rem + 2vmin);
+  width: auto;
+}
+
 .bg-one {
   background-color: var(--a-hover-color, deeppink);
 }
