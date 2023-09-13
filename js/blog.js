@@ -42,7 +42,7 @@ const data = [
 ]
 
 function blog() {
-  const element = document.getElementById('lists')
+  const element = document.getElementById('blog')
   data.forEach((section) => blogSection(element, section))
 }
 
