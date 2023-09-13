@@ -42,22 +42,24 @@ const data = [
 ]
 
 function blog() {
-  const element = document.getElementById('blog')
-  data.forEach((section) => blogSection(element, section))
+  // find the blog div + create a list from each type of blog
+  const blog = document.getElementById('blog')
+  data.forEach((section) => blogSection(blog, section))
 }
 
-function blogSection(element, section) {
-  const div = element.appendChild(document.createElement('div'))
+function blogSection(blog, section) {
+  // section container div + heading + styles
+  const div = blog.appendChild(document.createElement('div'))
   const heading = div.appendChild(document.createElement('div'))
   heading.innerHTML = section.heading
   heading.classList.add('t-2', 'pb-1')
-  const ul = div.appendChild(document.createElement('ul'))
-  blogItems(ul, section.posts)
-}
 
-function blogItems(ul, urls) {
-  urls.forEach((url) => {
-    ul.innerHTML += `<li id=${url.id}><a href=${url.url}>${url.title}</a></li>`
+  // Start an unordered list
+  const ul = div.appendChild(document.createElement('ul'))
+
+  // Add each blog link as a list item
+  section.posts.forEach((post) => {
+    ul.innerHTML += `<li id=${post.id}><a href=${post.url}>${post.title}</a></li>`
   })
 }
 
