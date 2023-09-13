@@ -34,6 +34,6 @@ function blogListItem(sectionList, post) {
 
   // add the hyperlink to each list item
   const link = listItem.appendChild(document.createElement('a'))
-  link.setAttribute('href', 'post.url')
+  link.setAttribute('href', post.url)
   link.innerHTML = post.title
 }
