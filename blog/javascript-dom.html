@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dlp - JavaScript and the DOM</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="What is JavaScript and the DOM?" />
+    <link href="/styles/main.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="nav">
+        <div>
+          <a class="title large" href="/index.html">davidlpoole</a>
+          <a class="title small" href="/index.html">dlp</a>
+        </div>
+        <div>
+          <a href="https://github.com/davidlpoole" target="_blank">
+            <img
+              class="github-logo dark hide-print"
+              src="/images/github-mark-white.svg"
+              title="View my GitHub Profile"
+            />
+            <img
+              class="github-logo light hide-print"
+              src="/images/github-mark-black.svg"
+              title="View my GitHub Profile"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-3 max-width-60">
+      <h1>What is JavaScript and the DOM?</h1>
+      <p>
+        <em> TLDR: JavaScript adds interactivity to websites </em>
+      </p>
+      <h3>13 November 2010</h3>
+
+      <h2>How does JavaScript relate to HTML and CSS?</h2>
+      <p>Building a website with HTML/CSS/JS is like constructing a building</p>
+      <ul>
+        <li>HTML is the foundation and structure.</li>
+        <li>CSS is the aesthetics and design.</li>
+        <li>
+          JavaScript is the interactive and functional components that make your
+          building (or website) not just visually pleasing but also practical
+          and engaging.
+        </li>
+      </ul>
+      <h2>What are functions, control flow and loops?</h2>
+      <b>Functions:</b> In JavaScript, functions are like predefined sets of
+      instructions that can be reused to perform a specific task or operation.
+      They are helpful because they promote code reusability, organization, and
+      modularity. Each step in making a pizza is like a function, for example
+      the first step preparing dough is not specific to pizza and can be used in
+      other recipes such as making donuts or bagettes.
+
+      <p>
+        <b>Control Flow</b>: Control flow is like the step by step instructions
+        you follow when making a pizza. It's the order in which you do things to
+        get something done:
+      </p>
+      <ol>
+        <li>Prepare Dough</li>
+        <li>Add Sauce</li>
+        <li>Add Cheese</li>
+        <p>
+          <b>Loops:</b> At this point we want to start adding a heap of toppings
+          and because this is a repetitive procedure, we can do it using a loop,
+          repeating the next steps (a, b, c) until we've got all the toppings we
+          want.
+        </p>
+        <ol type="a">
+          <li>Choose a Topping</li>
+          <li>Prepare the Topping</li>
+          <li>Add the Topping</li>
+        </ol>
+        <p>
+          Now that we have added all the toppings, the control flow continues
+          with the rest of the process:
+        </p>
+        <li>Bake</li>
+        <li>Slice</li>
+        <li>Serve</li>
+      </ol>
+
+      <h2>What is the DOM (Document Object Model)?</h2>
+      <p>
+        The DOM is an interface for web documents. It represents the web page as
+        a tree of objects, where each part of the web page (like HTML elements,
+        attributes, and text) is represented as a node in this tree.
+      </p>
+      <p>
+        The DOM allows you to interact with web pages dynamically using
+        JavaScript, allowing you to access, and change the content, structure,
+        and style of a web page.
+      </p>
+      <p>
+        The code snippet below shows a simple example of using JavaScript to
+        manipulate the DOM.
+      </p>
+      <pre>
+        <code>
+01  &lt;html&gt;
+02    &lt;body&gt;
+03      &lt;p id=&quot;myText&quot;&gt;Click the button to change this text!&lt;/p&gt;
+04      &lt;button onclick=&quot;changeText()&quot;&gt;Change Text&lt;/button&gt;
+05
+06      &lt;script&gt;
+07          function changeText() {
+08              const element = document.getElementById('myText');
+09              element.innerHTML = 'Text has been changed!';
+10          }
+11      &lt;/script&gt;
+12    &lt;/body&gt;
+13  &lt;/html&gt;
+        </code>
+      </pre>
+      <ul>
+        <li>
+          Line 03: is a tag with the id <span class="code">myText</span> with
+          some text we want to change.
+        </li>
+        <li>
+          Line 04: Adds a button that will run the
+          <span class="code">changeText()</span> function when clicked.
+        </li>
+        <li>
+          Line 08: Searches the DOM for an element that has id
+          <span class="code">myText</span> and saves a pointer variable.
+        </li>
+        <li>Line 09: Uses the elements innerHTML method to edit the text.</li>
+      </ul>
+      <h2>
+        What's the difference between accessing data in arrays and objects in
+        JS?
+      </h2>
+      <p>
+        Arrays and objects are data structures that have some similarities in
+        that they can hold multiple different simple pieces of data inside them.
+        however they also have differences:
+      </p>
+      <p>
+        Arrays are good for storing lists of similar items because you can
+        easily sort or filter them or loop through the items, whereas objects
+        are better for storing mixed data that can have named properties, such
+        as storing details about a person (name, address, phone number, etc),
+        and then accessing individual values using the key without having to
+        loop through every bit of data.
+      </p>
+
+      <p><a href="/index.html" class="hide-print">Go back to home page</a></p>
+    </div>
+  </body>
+  <!-- this is a comment. -->
+</html>
