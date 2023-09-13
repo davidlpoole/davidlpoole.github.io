@@ -11,6 +11,7 @@
   --body-color: #ffffff;
   --a-color: mediumspringgreen;
   --a-hover-color: deeppink;
+  --code-bg: #333;
 }
 
 a {
@@ -26,12 +27,19 @@ a:hover {
   display: none;
 }
 
+code {
+  display: block;
+  overflow: scroll;
+}
+
+code,
 .code {
   font-family: 'Courier New', Courier, monospace;
-  background-color: #3f3f3f;
+  background-color: var(--code-bg);
   margin: 0;
   padding: 0.1rem 0.5rem 0 0.5rem;
   list-style: none;
+  font-size: 0.9em;
 }
 
 /* Light mode override */
@@ -40,6 +48,7 @@ a:hover {
     --body-bg: rgb(230, 227, 236);
     --body-color: rgb(43, 40, 122);
     --a-color: rgb(81, 69, 255);
+    --code-bg: rgb(209, 205, 217);
   }
 
   a {
