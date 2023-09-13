@@ -41,26 +41,39 @@ const data = [
   },
 ]
 
-function blog() {
+function blog(blogElementId, blogData) {
   // find the blog div + create a list from each type of blog
-  const blog = document.getElementById('blog')
-  data.forEach((section) => blogSection(blog, section))
+  const blogElement = document.getElementById(blogElementId)
+  blogData.forEach((sectionData) => blogSection(blogElement, sectionData))
 }
 
-function blogSection(blog, section) {
+function blogSection(blogElement, sectionData) {
   // section container div + heading + styles
-  const div = blog.appendChild(document.createElement('div'))
-  const heading = div.appendChild(document.createElement('div'))
-  heading.innerHTML = section.heading
-  heading.classList.add('t-2', 'pb-1')
+  const sectionContainer = blogElement.appendChild(
+    document.createElement('div')
+  )
+  const headingDiv = sectionContainer.appendChild(document.createElement('div'))
+  headingDiv.innerHTML = sectionData.heading
+  headingDiv.classList.add('t-2', 'pb-1')
 
   // Start an unordered list
-  const ul = div.appendChild(document.createElement('ul'))
+  const sectionList = sectionContainer.appendChild(document.createElement('ul'))
 
   // Add each blog link as a list item
-  section.posts.forEach((post) => {
-    ul.innerHTML += `<li id=${post.id}><a href=${post.url}>${post.title}</a></li>`
+  sectionData.posts.forEach((post) => {
+    blogListItem(sectionList, post)
   })
 }
 
-blog()
+function blogListItem(sectionList, post) {
+  // create a list item for each blog post
+  const listItem = sectionList.appendChild(document.createElement('li'))
+  listItem.setAttribute('id', post.id)
+
+  // add the hyperlink to each list item
+  const link = listItem.appendChild(document.createElement('a'))
+  link.setAttribute('href', 'post.url')
+  link.innerHTML = post.title
+}
+
+blog('blog', data)
