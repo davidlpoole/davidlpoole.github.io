@@ -14,13 +14,6 @@
     "sprint": 2
   },
   {
-    "id": 5,
-    "url": "/blog/javascript-dom.html",
-    "title": "JavaScript and the DOM",
-    "section": "Technical",
-    "sprint": 3
-  },
-  {
     "id": 2,
     "url": "/blog/identity-values.html",
     "title": "Exploration of Identity, Values, and Strengths",
@@ -39,6 +32,13 @@
     "url": "/blog/emotional-intelligence.html",
     "title": "Emotional Intelligence Exploration",
     "section": "Core",
+    "sprint": 3
+  },
+  {
+    "id": 5,
+    "url": "/blog/javascript-dom.html",
+    "title": "JavaScript and the DOM",
+    "section": "Technical",
     "sprint": 3
   }
 ]

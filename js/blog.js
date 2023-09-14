@@ -1,17 +1,27 @@
-blog('blog', './data.json')
+const sortByCheckbox = document.getElementById('sortBySprint')
+sortByCheckbox.addEventListener('change', initializeBlog)
 
-const sortBy = 'section' // 'section' | 'sprint'
+let sortBySprint = sortByCheckbox.checked
+
+function initializeBlog() {
+  sortBySprint = sortByCheckbox.checked
+  const blogElement = document.getElementById('blog')
+  if (blogElement.children.length > 0) blogElement.replaceChildren()
+  blog('blog', './data.json')
+}
+
+initializeBlog()
 
 async function blog(blogElementId, blogDataJSON) {
   const response = await fetch(blogDataJSON)
   const blogData = await response.json()
-  console.log(blogData)
+  console.table(blogData)
 
   // find the blog div + create a list from each type of blog
   const blogElement = document.getElementById(blogElementId)
   blogData.forEach((post) => {
     const sectionDiv =
-      sortBy === 'section'
+      sortBySprint === false
         ? getSectionDiv(blogElement, post.section)
         : getSectionDiv(blogElement, `Sprint ${post.sprint}`)
     addBlogItem(sectionDiv, post)
