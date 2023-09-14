@@ -3,32 +3,31 @@ blog('blog', './data.json')
 async function blog(blogElementId, blogDataJSON) {
   const response = await fetch(blogDataJSON)
   const blogData = await response.json()
+  console.log(blogData)
 
   // find the blog div + create a list from each type of blog
   const blogElement = document.getElementById(blogElementId)
-  blogData.forEach((sectionData) => blogSection(blogElement, sectionData))
+  blogData.forEach((post) => blogSection(blogElement, post))
 }
 
-function blogSection(blogElement, sectionData) {
+function blogSection(blogElement, post) {
   // section container div + heading + styles
-  const sectionContainer = blogElement.appendChild(
-    document.createElement('div')
-  )
-  const headingDiv = sectionContainer.appendChild(document.createElement('div'))
-  headingDiv.innerHTML = sectionData.heading
-  headingDiv.classList.add('t-2', 'pb-1')
+  let sectionContainer = document.getElementById(post.section)
+  let sectionList = document.getElementById(`ul${post.section}`)
 
-  // Start an unordered list
-  const sectionList = sectionContainer.appendChild(document.createElement('ul'))
+  if (!sectionContainer) {
+    sectionContainer = blogElement.appendChild(document.createElement('div'))
+    sectionContainer.setAttribute('id', post.section)
+
+    headingDiv = sectionContainer.appendChild(document.createElement('div'))
+    headingDiv.innerHTML = post.section
+    headingDiv.classList.add('t-2', 'pb-1')
+
+    sectionList = sectionContainer.appendChild(document.createElement('ul'))
+    sectionList.setAttribute('id', `ul${post.section}`)
+  }
 
   // Add each blog link as a list item
-  sectionData.posts.forEach((post) => {
-    blogListItem(sectionList, post)
-  })
-}
-
-function blogListItem(sectionList, post) {
-  // create a list item for each blog post
   const listItem = sectionList.appendChild(document.createElement('li'))
   listItem.setAttribute('id', post.id)
 
