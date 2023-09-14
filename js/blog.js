@@ -1,5 +1,7 @@
 blog('blog', './data.json')
 
+const sortBy = 'section' // 'section' | 'sprint'
+
 async function blog(blogElementId, blogDataJSON) {
   const response = await fetch(blogDataJSON)
   const blogData = await response.json()
@@ -8,20 +10,21 @@ async function blog(blogElementId, blogDataJSON) {
   // find the blog div + create a list from each type of blog
   const blogElement = document.getElementById(blogElementId)
   blogData.forEach((post) => {
-    const sectionDiv = getSectionDiv(blogElement, post.section)
+    const sectionDiv =
+      sortBy === 'section'
+        ? getSectionDiv(blogElement, post.section)
+        : getSectionDiv(blogElement, `Sprint ${post.sprint}`)
     addBlogItem(sectionDiv, post)
   })
 }
 
 function getSectionDiv(blogElement, section) {
-  // find elements or return null
-  let sectionContainer = document.getElementById(section)
+  // find element or return null
   let sectionList = document.getElementById(`ul${section}`)
 
   // if null then create them
-  if (!sectionContainer) {
+  if (!sectionList) {
     sectionContainer = blogElement.appendChild(document.createElement('div'))
-    sectionContainer.setAttribute('id', section)
 
     headingDiv = sectionContainer.appendChild(document.createElement('div'))
     headingDiv.innerHTML = section
