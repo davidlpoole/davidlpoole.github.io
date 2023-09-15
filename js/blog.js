@@ -1,15 +1,17 @@
-const sortByCheckbox = document.getElementById('sortBySprint')
-sortByCheckbox.addEventListener('change', initializeBlog)
+const groupByForm = document.forms.groupAndFilter
+let groupByValue = groupByForm.elements.groupBy.value
 
-let sortBySprint = sortByCheckbox.checked
+const groupByFieldset = document.getElementById('groupBy')
+
+groupByFieldset.addEventListener('input', initializeBlog)
 
 const filterByInput = document.getElementById('filterBy')
 filterByInput.addEventListener('input', initializeBlog)
 let filterBy = filterByInput.value
 
 function initializeBlog() {
-  sortBySprint = sortByCheckbox.checked
   filterBy = filterByInput.value
+  groupByValue = groupByForm.elements.groupBy.value
   const blogElement = document.getElementById('blog')
   if (blogElement.children.length > 0) blogElement.replaceChildren()
   blog('blog', './data.json')
@@ -38,7 +40,7 @@ async function blog(blogElementId, blogDataJSON) {
   const blogElement = document.getElementById(blogElementId)
   blogData.forEach((post) => {
     const sectionDiv =
-      sortBySprint === false
+      groupByValue === 'section'
         ? getSectionDiv(blogElement, post.section)
         : getSectionDiv(blogElement, `Sprint ${post.sprint}`)
     addBlogItem(sectionDiv, post)
@@ -52,6 +54,7 @@ function getSectionDiv(blogElement, section) {
   // if null then create them
   if (!sectionList) {
     sectionContainer = blogElement.appendChild(document.createElement('div'))
+    sectionContainer.classList.add('section')
 
     headingDiv = sectionContainer.appendChild(document.createElement('div'))
     headingDiv.innerHTML = section

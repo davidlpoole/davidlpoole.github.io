@@ -28,32 +28,8 @@
         and here's some stuff from the Foundations course...<br />
       </div>
 
-      <div class="sortAndFilter">
-        <style>
-          form {
-            display: flex;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            gap: 8px;
-            padding: 8px;
-            margin-bottom: 1em;
-            /* border: 1px solid hsl(0deg 0% 75%); */
-            width: 100%;
-            border-radius: 0.25em;
-          }
-          .sortBySprint {
-            flex-grow: 1;
-            flex-basis: 1;
-            margin-left: auto;
-            margin-right: 0;
-          }
-          .filterBy {
-            flex-grow: 10;
-            flex-basis: 10;
-          }
-        </style>
-
-        <form>
+      <div class="groupAndFilter">
+        <form id="groupAndFilter">
           <label class="filterBy" for="filterBy">
             Filter blog posts:
             <input
@@ -62,10 +38,28 @@
               placeholder="title / section / sprint #"
             />
           </label>
-          <label class="sortBySprint" for="sortBySprint">
-            <input id="sortBySprint" name="Sort By Sprint" type="checkbox" />
-            Display by Sprint?
-          </label>
+          <fieldset class="groupBy" id="groupBy">
+            Group by:
+            <label for="groupBySection">
+              <input
+                id="groupBySection"
+                type="radio"
+                value="section"
+                name="groupBy"
+                checked
+              />
+              Section
+            </label>
+            <label for="groupBySprint">
+              <input
+                id="groupBySprint"
+                type="radio"
+                value="sprint"
+                name="groupBy"
+              />
+              Sprint
+            </label>
+          </fieldset>
         </form>
       </div>
       <div id="blog" class="lists"></div>
