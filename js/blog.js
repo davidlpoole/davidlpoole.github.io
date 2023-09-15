@@ -15,7 +15,7 @@ initializeBlog()
 async function blog(blogElementId, blogDataJSON) {
   const response = await fetch(blogDataJSON)
   const blogData = await response.json()
-  console.table(blogData)
+  // console.table(blogData)
 
   // find the blog div + create a list from each type of blog
   const blogElement = document.getElementById(blogElementId)
