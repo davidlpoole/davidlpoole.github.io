@@ -98,7 +98,7 @@ input[type='text'] {
   padding: 0.5em;
   padding-bottom: 0.1em;
   font-size: 1rem;
-  width: 25ch;
+  width: 23ch;
 }
 
 input[type='text']::placeholder {
@@ -271,7 +271,6 @@ img {
 
 .bg-one {
   background-color: var(--a-hover-color, deeppink);
-  color: var(--body-bg, black);
 }
 
 .bg-two {
