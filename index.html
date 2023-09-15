@@ -30,6 +30,13 @@
 
       <div class="groupAndFilter">
         <form id="groupAndFilter">
+          <!-- Disable submitting form with a disabled hidden submit button -->
+          <input
+            type="submit"
+            disabled
+            onclick="return false"
+            style="display: none"
+          />
           <label class="filterBy" for="filterBy">
             Filter blog posts:
             <input
