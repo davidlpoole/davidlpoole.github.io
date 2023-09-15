@@ -20,13 +20,27 @@ function initializeBlog() {
 initializeBlog()
 
 function filterBlogs(blogData, filterText) {
-  return blogData.filter((post) => {
+  const filteredData = blogData.filter((post) => {
     return (
       post.title.toUpperCase().includes(filterText.toUpperCase()) ||
       post.section.toUpperCase().includes(filterText.toUpperCase()) ||
       post.sprint === parseInt(filterText)
     )
   })
+
+  if (filteredData.length > 0) {
+    return filteredData
+  } else {
+    return [
+      {
+        id: 0,
+        url: '',
+        title: `Sorry, no blog articles found with for the search '${filterText}'.`,
+        section: '',
+        sprint: 0,
+      },
+    ]
+  }
 }
 
 async function blog(blogElementId, blogDataJSON) {
@@ -69,11 +83,16 @@ function getSectionDiv(blogElement, section) {
 
 function addBlogItem(sectionDiv, post) {
   // Add each blog link as a list item
-  const listItem = sectionDiv.appendChild(document.createElement('li'))
-  listItem.setAttribute('id', post.id)
+  if (post.url.length > 0) {
+    const listItem = sectionDiv.appendChild(document.createElement('li'))
+    listItem.setAttribute('id', post.id)
 
-  // add the hyperlink to each list item
-  const link = listItem.appendChild(document.createElement('a'))
-  link.setAttribute('href', post.url)
-  link.innerHTML = post.title
+    // add the hyperlink to each list item
+    const link = listItem.appendChild(document.createElement('a'))
+    link.setAttribute('href', post.url)
+    link.innerHTML = post.title
+  } else {
+    sectionDiv.innerHTML = post.title
+    sectionDiv.classList.add('error-text')
+  }
 }

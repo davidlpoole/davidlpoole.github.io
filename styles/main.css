@@ -278,3 +278,7 @@ img {
   background-color: var(--a-color, mediumspringgreen);
   color: var(--body-bg, black);
 }
+
+.error-text {
+  font-style: italic;
+}
