@@ -42,22 +42,6 @@ code,
   font-size: 0.9em;
 }
 
-input[type='text'] {
-  background-color: var(--body-color);
-  color: var(--body-bg);
-  border: 0;
-  padding: 0.5em;
-  border-radius: 0.25em;
-  font-size: 1rem;
-  width: 45ch;
-  max-width: 100%;
-}
-
-input[type='text']::placeholder {
-  border: 0;
-  font-style: italic;
-}
-
 /* Light mode override */
 @media (prefers-color-scheme: light) {
   :root {
@@ -77,6 +61,48 @@ input[type='text']::placeholder {
   .dark {
     display: none;
   }
+}
+
+form {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+  margin-bottom: 1em;
+  width: 100%;
+  border-radius: 0.25em;
+}
+
+.sortBySprint {
+  flex-grow: 1;
+  flex-basis: 1;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.filterBy {
+  flex-grow: 10;
+  flex-basis: 10;
+}
+
+input[type='text'] {
+  background-color: var(--body-bg);
+  color: var(--body-color);
+  border: 0;
+  border-bottom: 1px solid var(--body-color);
+  padding: 0.5em;
+  font-size: 1rem;
+  width: 25ch;
+}
+
+input[type='text']::placeholder {
+  border: 0;
+  font-style: italic;
+}
+
+input[type='text']:focus {
+  outline: none;
 }
 
 /* hide elements if not required when printing */
@@ -99,18 +125,11 @@ html {
 }
 
 /* RESPONSIVE */
-/* 2 columns on large screens */
+/* 2-3 columns on large screens */
 .lists {
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 1rem;
-}
-
-.sortAndFilter {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  justify-content: space-between;
-  align-items: center;
 }
 
 .small {
@@ -128,11 +147,6 @@ html {
 @media (max-width: 700px) {
   .lists {
     grid-template-columns: 1fr;
-  }
-
-  .sortAndFilter {
-    display: grid;
-    grid-template-columns: repeat(1, auto);
   }
 
   .small {
