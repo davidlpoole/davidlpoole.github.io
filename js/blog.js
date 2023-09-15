@@ -34,7 +34,8 @@ async function blog(blogElementId, blogDataJSON) {
   const fullBlogData = await response.json()
   // console.table(blogData)
 
-  const blogData = filterBlogs(fullBlogData, filterBy)
+  const blogData =
+    filterBy.length > 0 ? filterBlogs(fullBlogData, filterBy) : fullBlogData
 
   // find the blog div + create a list from each type of blog
   const blogElement = document.getElementById(blogElementId)
