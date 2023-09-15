@@ -40,5 +40,26 @@
     "title": "JavaScript and the DOM",
     "section": "Technical",
     "sprint": 3
+  },
+  {
+    "id": 6,
+    "url": "#",
+    "title": "Neuroplasticity and Growth Mindset (Coming soon)",
+    "section": "Core",
+    "sprint": 4
+  },
+  {
+    "id": 6,
+    "url": "#",
+    "title": "Te Whare Tapa Whā (Coming soon)",
+    "section": "Core",
+    "sprint": 4
+  },
+  {
+    "id": 7,
+    "url": "#",
+    "title": "Problem solving (Coming soon)",
+    "section": "Technical",
+    "sprint": 4
   }
 ]
