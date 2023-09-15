@@ -3,8 +3,13 @@ sortByCheckbox.addEventListener('change', initializeBlog)
 
 let sortBySprint = sortByCheckbox.checked
 
+const filterByInput = document.getElementById('filterBy')
+filterByInput.addEventListener('input', initializeBlog)
+let filterBy = filterByInput.value
+
 function initializeBlog() {
   sortBySprint = sortByCheckbox.checked
+  filterBy = filterByInput.value
   const blogElement = document.getElementById('blog')
   if (blogElement.children.length > 0) blogElement.replaceChildren()
   blog('blog', './data.json')
@@ -12,10 +17,22 @@ function initializeBlog() {
 
 initializeBlog()
 
+function filterBlogs(blogData, filterText) {
+  return blogData.filter((post) => {
+    return (
+      post.title.toUpperCase().includes(filterText.toUpperCase()) ||
+      post.section.toUpperCase().includes(filterText.toUpperCase()) ||
+      post.sprint === parseInt(filterText)
+    )
+  })
+}
+
 async function blog(blogElementId, blogDataJSON) {
   const response = await fetch(blogDataJSON)
-  const blogData = await response.json()
+  const fullBlogData = await response.json()
   // console.table(blogData)
+
+  const blogData = filterBlogs(fullBlogData, filterBy)
 
   // find the blog div + create a list from each type of blog
   const blogElement = document.getElementById(blogElementId)
