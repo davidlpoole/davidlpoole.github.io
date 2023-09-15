@@ -42,6 +42,21 @@ code,
   font-size: 0.9em;
 }
 
+input[type='text'] {
+  background-color: var(--body-color);
+  color: var(--body-bg);
+  border: 0;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  font-size: 1rem;
+  width: 30ch;
+  max-width: 100%;
+}
+
+input[type='text']::placeholder {
+  border: 0;
+}
+
 /* Light mode override */
 @media (prefers-color-scheme: light) {
   :root {
@@ -128,9 +143,12 @@ h3 {
 }
 
 p,
-img,
-.ptb-1 {
+img {
   padding: 1vw 0 1vw 0;
+}
+
+.ptb-1 {
+  padding: 1em 0 1em 0;
 }
 
 /* classes */
