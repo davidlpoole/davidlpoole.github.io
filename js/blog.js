@@ -35,7 +35,7 @@ function filterBlogs(blogData, filterText) {
       {
         id: 0,
         url: '',
-        title: `Sorry, no blog articles found with for the search '${filterText}'.`,
+        title: `Sorry, no blog articles found for the search '${filterText}'.`,
         section: '',
         sprint: 0,
       },
