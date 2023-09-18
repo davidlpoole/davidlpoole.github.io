@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Problem Solving | dlp</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="How to solve problems" />
+    <link href="/styles/main.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header" class="header"></div>
+
+    <div class="p-3 max-width-60">
+      <h1>Problem Solving: Getting unblocked</h1>
+      <h3>19 September 2023</h3>
+
+      <hr />
+      <ol>
+        <li>
+          <h2>A time I was blocked on a simple problem:</h2>
+          <p>
+            Incorrect assumptions about
+            <span class="code">array.prototype.map()</span> and
+            <span class="code">array.prototype.forEach()</span>
+          </p>
+          <h3>What was the problem?</h3>
+          <p>
+            The <span class="code">forEach()</span> method wasn't doing what I
+            thought I knew it did; I had given an example of
+            <span class="code">map()</span> converting an array of values into
+            an array of HTML list items, and then tried to do the same example
+            but with <span class="code">forEach()</span> thinking it mutates the
+            array, whereas map does not.
+          </p>
+          <h3>What problem-solving techniques did you use?</h3>
+          <p>
+            I tried a few techniques to work out what was going wrong, firstly
+            double checking my code and trying a simple example, and
+            console.logging to double check what was happening. That told me
+            that it wasn't doing what i thought it should do, so I checked
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"
+            >
+              MDN:Array.prototype.forEach()
+            </a>
+            and
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+            >
+              MDN:Array.prototype.map() </a
+            >, I also googled and found some stack overflow posts discussing the
+            differences between map and forEach, and also went back to look at
+            some code I had previously written where I knew I had used
+            forEach().
+          </p>
+          <h3>How did you feel throughout the process?</h3>
+          <p>
+            I had been using map and forEach with no problems in the past but
+            somehow I didn't fully understand them, so this was confusing and
+            surprising.
+          </p>
+          <h3>What did you learn?</h3>
+          <p>
+            I got a better understanding of how these functions work, but also I
+            realised that you can't always rely on things you think you know, I
+            had made some incorrect assumptions and when trying to explain one
+            of these I found that it was incorrect.
+          </p>
+        </li>
+        <li>
+          <h2>A time I elegantly solved a problem:</h2>
+          <h3>What was the problem?</h3>
+          <p>
+            Not sure if this was an elegant solution but I'm happy with the
+            final result... I wanted to make my blog list on the front page
+            dynamic, so I could filter and group the posts different ways
+          </p>
+          <h3>What problem-solving techniques did you use?</h3>
+          <p>
+            I had an idea of how I could do it, so first I broke the problem
+            down and wrote some high level pseudo code, and worked on each part
+            step by step. There was a lot of console logging and using simple
+            data which I built up slowly to what was actually required (i.e. the
+            full metadata for the posts including post name, url, section name,
+            sprint number). There may have a been a bit of googling, and
+            probably a lot of talking myself through what it was doing and what
+            I needed it to do (i.e. the rubber ducky method).
+          </p>
+          <h3>How did you feel throughout the process?</h3>
+          <p>
+            It took me quite a while to get right, starting with the logic then
+            the styling, but I was making good progress throughout and it felt
+            good to be using my JS skills to solve a problem, knowing that I had
+            even more problem solving tools available if I needed them.
+          </p>
+          <h3>What did you learn?</h3>
+          <p>
+            I solidified my understanding of using JS to manipulate the DOM,
+            JSON, and also some HTML/CSS, to solve quite a problem that had a
+            few elements to it. And reaffirmed that I enjoy problem solving and
+            the rewarding feeling of getting things done.
+          </p>
+        </li>
+        <li>
+          <h2>Reflecting on the problem solving techniques:</h2>
+          <p>
+            I'm confident with a wide array of problem-solving techniques and
+            processes, ranging from effective pseudocode planning to reading
+            documentation and online resources to seeking guidance from peers
+            and coaches. This confidence allows me to approach challenges with
+            assurance and adaptability, knowing that I can leverage these tools
+            effectively to find solutions and continuously improve my approach.
+          </p>
+        </li>
+      </ol>
+
+      <hr />
+
+      <p><a href="/index.html" class="hide-print">Go back to home page</a></p>
+    </div>
+    <script src="/js/header.js"></script>
+  </body>
+</html>
