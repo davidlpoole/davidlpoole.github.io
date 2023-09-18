@@ -3,7 +3,7 @@
     "id": 0,
     "url": "/blog/te-houtaewa-template.html",
     "title": "The Story of Te Houtaewa (template)",
-    "section": "Technical",
+    "section": "Core",
     "sprint": 1
   },
   {
@@ -18,7 +18,7 @@
     "url": "/blog/identity-values.html",
     "title": "Exploration of Identity, Values, and Strengths",
     "section": "Core",
-    "sprint": 2
+    "sprint": 1
   },
   {
     "id": 3,
@@ -50,8 +50,8 @@
   },
   {
     "id": 6,
-    "url": "#",
-    "title": "Te Whare Tapa Whā (Coming soon)",
+    "url": "/blog/te-whare-tapa-wha.html",
+    "title": "'Te Whare Tapa Whā'  Wellbeing Plan",
     "section": "Core",
     "sprint": 4
   },
