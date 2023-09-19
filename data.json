@@ -50,23 +50,37 @@
     "sprint": "Sprint 4"
   },
   {
-    "id": 6,
+    "id": 7,
     "url": "/blog/te-whare-tapa-wha.html",
     "title": "'Te Whare Tapa Whā'  Wellbeing Plan",
     "section": "Core",
     "sprint": "Sprint 4"
   },
   {
-    "id": 7,
+    "id": 8,
     "url": "/blog/problem-solving.html",
     "title": "Problem solving techniques",
     "section": "Technical",
     "sprint": "Sprint 4"
   },
   {
-    "id": 8,
+    "id": 9,
+    "url": "#",
+    "title": "Foundations Reflection (coming soon)",
+    "section": "Core",
+    "sprint": "Sprint 5"
+  },
+  {
+    "id": 10,
     "url": "/blog/prefers-color-scheme.html",
     "title": "CSS 'prefers-color-scheme' (light/dark mode)",
+    "section": "Technical",
+    "sprint": "Other"
+  },
+  {
+    "id": 11,
+    "url": "/blog/git-commands.html",
+    "title": "Git commands I always forget",
     "section": "Technical",
     "sprint": "Other"
   }
