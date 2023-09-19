@@ -26,34 +26,54 @@
       <hr />
 
       <h2>Simple auto light/dark mode with CSS Media Queries</h2>
+
       <p>
         The <span class="code">prefers-color-scheme</span> CSS media feature is
         used to detect if a user has requested light or dark color themes. A
         user indicates their preference through an operating system setting
         (e.g. light or dark mode) or a user agent setting.
       </p>
+
+      <h2>Step 1: Set Up Default CSS Styles for Dark Mode</h2>
       <p>
-        So I set up some default css styles which would apply for dark mode, so
-        that would be the default theme. Then using
-        <span class="code">prefers-color-scheme</span>, I override the dark
-        theme with whatever elements I want to change for light mode, such as
-        background and font colour.
+        To start, let's define our default CSS styles for dark mode. This will
+        serve as the foundation for our design. You can set these styles in a
+        separate CSS file or within the &lt;style&gt; tag in your HTML file.
+        Here's a simple example:
       </p>
-      <pre><code>
-  /* Default is dark mode */
+      <pre>
+    <code>
+body {
+  background-color: #1a1a1a; /* Dark background color */
+  color: #ffffff; /* Light font color */
+}
+
+/* Additional styles for dark mode */
+/* Add more styles specific to dark mode as needed */
+    </code>
+  </pre>
+
+      <h2>Step 2: Override Styles for Light Mode Using prefers-color-scheme</h2>
+      <p>
+        Now that we have our default dark mode styles, we'll use the
+        <span class="code">prefers-color-scheme</span> media query to customize
+        the appearance for light mode. This feature detects the user's system
+        preference for light or dark color schemes and applies the appropriate
+        styles accordingly.
+      </p>
+      <pre>
+    <code>
+@media (prefers-color-scheme: light) {
   body {
-    background-color: black;
-    color: white
+    background-color: #ffffff; /* Light background color */
+    color: #333333; /* Dark font color */
   }
 
-  /* Override if in light mode */
-  @media (prefers-color-scheme: light) {
-  body {
-    background-color: white;
-    color: black
-  }
-
-</code></pre>
+  /* Additional styles for light mode */
+  /* Add more styles specific to light mode as needed */
+}
+    </code>
+  </pre>
 
       <p>
         Reference:

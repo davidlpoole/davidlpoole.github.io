@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Git commands I always forget | dlp</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A collection of git commands that I don't use enough to remember"
+    />
+    <link href="/styles/main.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header" class="header"></div>
+
+    <div class="p-3 max-width-60">
+      <h1>Git commands I always forget</h1>
+      <h3>20 September 2023</h3>
+      <!-- 
+  git reset soft/hard
+  read a file from another branch/commit (git show?)
+  
+  - Undo last commit (move branch pointer back 1), leaves changes in the index (staged)  
+
+
+- Undo last commit, unstage changes  
+`git reset HEAD~` (technically can use `--mixed` but mixed is the default)
+
+- Undo last commit and blows away all changes! (note: can get back by looking at reflog)  
+`git reset --hard HEAD~`
+ -->
+      <hr />
+
+      <h2>Undo the last commit</h2>
+
+      <pre>
+          <code>
+\\ undo and leave changes staged
+\\ i.e. resets the HEAD only
+
+git reset --soft HEAD~  
+
+
+\\ undo and un-stage changes
+\\ i.e. resets the HEAD and Index
+
+git reset --mixed HEAD~   \\ AKA: git reset HEAD~
+
+
+\\ undo and discard changes
+\\ i.e. resets the HEAD, Index, and Working directory
+
+git reset --hard HEAD~  
+          </code>
+        </pre>
+
+      <h2>Amending the last commit</h2>
+      <pre><code>
+// add new changes and redo commit
+git commit -a --amend            // to edit the commit message, or
+git commit -a --amend --no-edit  // keep the same commit message
+
+// the same as:
+git reset --soft HEAD~        
+git add .
+git commit
+
+</code></pre>
+
+      <hr />
+
+      <p><a href="/index.html" class="hide-print">Go back to home page</a></p>
+    </div>
+    <script src="/js/header.js"></script>
+  </body>
+</html>
