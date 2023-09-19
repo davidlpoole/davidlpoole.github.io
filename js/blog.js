@@ -1,18 +1,17 @@
-const groupByForm = document.forms.groupAndFilter
-let groupByValue = groupByForm.elements.groupBy.value
-
+const blogElement = document.getElementById('blog')
 const groupByFieldset = document.getElementById('groupBy')
+const filterByInput = document.getElementById('filterBy')
 
 groupByFieldset.addEventListener('input', initializeBlog)
-
-const filterByInput = document.getElementById('filterBy')
 filterByInput.addEventListener('input', initializeBlog)
+
+const groupByForm = document.forms.groupAndFilter
+let groupByValue = groupByForm.elements.groupBy.value
 let filterBy = filterByInput.value
 
 function initializeBlog() {
   filterBy = filterByInput.value
   groupByValue = groupByForm.elements.groupBy.value
-  const blogElement = document.getElementById('blog')
   if (blogElement.children.length > 0) blogElement.replaceChildren()
   blog('blog', './data.json')
 }
@@ -24,7 +23,7 @@ function filterBlogs(blogData, filterText) {
     return (
       post.title.toUpperCase().includes(filterText.toUpperCase()) ||
       post.section.toUpperCase().includes(filterText.toUpperCase()) ||
-      post.sprint === parseInt(filterText)
+      post.sprint.toUpperCase().includes(filterText.toUpperCase())
     )
   })
 
