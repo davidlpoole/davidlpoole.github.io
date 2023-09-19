@@ -54,10 +54,7 @@ async function blog(blogElementId, blogDataJSON) {
   // find the blog div + create a list from each type of blog
   const blogElement = document.getElementById(blogElementId)
   blogData.forEach((post) => {
-    const sectionDiv =
-      groupByValue === 'section'
-        ? getSectionDiv(blogElement, post.section)
-        : getSectionDiv(blogElement, `Sprint ${post.sprint}`)
+    const sectionDiv = getSectionDiv(blogElement, post[groupByValue])
     addBlogItem(sectionDiv, post)
   })
 }

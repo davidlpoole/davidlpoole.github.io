@@ -4,62 +4,70 @@
     "url": "/blog/te-houtaewa-template.html",
     "title": "The Story of Te Houtaewa (template)",
     "section": "Core",
-    "sprint": 1
+    "sprint": "Sprint 1"
   },
+
   {
     "id": 1,
-    "url": "/blog/html-css.html",
-    "title": "CSS Concepts - Margin, Border and Padding",
-    "section": "Technical",
-    "sprint": 2
-  },
-  {
-    "id": 2,
     "url": "/blog/identity-values.html",
     "title": "Exploration of Identity, Values, and Strengths",
     "section": "Core",
-    "sprint": 1
+    "sprint": "Sprint 1"
+  },
+  {
+    "id": 2,
+    "url": "/blog/html-css.html",
+    "title": "CSS Margin, Border and Padding",
+    "section": "Technical",
+    "sprint": "Sprint 2"
   },
   {
     "id": 3,
     "url": "/blog/learning-plan.html",
     "title": "Dev Academy Learning Plan",
     "section": "Core",
-    "sprint": 2
+    "sprint": "Sprint 2"
   },
   {
     "id": 4,
     "url": "/blog/emotional-intelligence.html",
     "title": "Emotional Intelligence Exploration",
     "section": "Core",
-    "sprint": 3
+    "sprint": "Sprint 3"
   },
   {
     "id": 5,
     "url": "/blog/javascript-dom.html",
-    "title": "JavaScript and the DOM",
+    "title": "JavaScript and the Document Object Model (DOM)",
     "section": "Technical",
-    "sprint": 3
+    "sprint": "Sprint 3"
   },
   {
     "id": 6,
     "url": "/blog/neuroplasticity.html",
     "title": "Neuroplasticity and Growth Mindset",
     "section": "Core",
-    "sprint": 4
+    "sprint": "Sprint 4"
   },
   {
     "id": 6,
     "url": "/blog/te-whare-tapa-wha.html",
     "title": "'Te Whare Tapa Whā'  Wellbeing Plan",
     "section": "Core",
-    "sprint": 4
+    "sprint": "Sprint 4"
   },
   {
     "id": 7,
     "url": "/blog/problem-solving.html",
-    "title": "Problem solving",
+    "title": "Problem solving techniques",
     "section": "Technical",
-    "sprint": 4
+    "sprint": "Sprint 4"
+  },
+  {
+    "id": 8,
+    "url": "/blog/prefers-color-scheme.html",
+    "title": "CSS light/dark mode",
+    "section": "Technical",
+    "sprint": "Other"
   }
 ]
