@@ -9,72 +9,98 @@ const groupByForm = document.forms.groupAndFilter
 let groupByValue = groupByForm.elements.groupBy.value
 let filterBy = filterByInput.value
 
+const ERROR_MESSAGES = {
+  network: 'Network error while fetching blog content.',
+  blogContent: 'Error displaying blog content.',
+  noContent: 'No posts found.',
+}
+
 function initializeBlog() {
   filterBy = filterByInput.value
   groupByValue = groupByForm.elements.groupBy.value
-  if (blogElement.children.length > 0) blogElement.replaceChildren()
-  blog('blog', './data.json')
+  blogElement.replaceChildren()
+  displayBlog('./data.json')
 }
 
 initializeBlog()
 
-function filterBlogs(blogData, filterText) {
-  const filteredData = blogData.filter((post) => {
+async function fetchBlogData(blogDataJSON) {
+  try {
+    const response = await fetch(blogDataJSON)
+    if (!response.ok) {
+      throw new Error('Network response was not ok.')
+    }
+    return await response.json()
+  } catch (error) {
+    handleError(ERROR_MESSAGES.network, error)
+  }
+}
+
+function displayErrorText(errorText, element) {
+  element.innerHTML = errorText
+  element.classList.add('error-text')
+}
+
+function handleError(message, error) {
+  console.error(`${message} ${error.message}`)
+  displayErrorText(message, blogElement)
+}
+
+async function displayBlog(blogDataJSON) {
+  const blogData = await fetchBlogData(blogDataJSON)
+
+  const filteredBlogData =
+    filterBy.length > 0 ? filterBlogData(blogData, filterBy) : blogData
+
+  if (filteredBlogData.length === 0)
+    displayErrorText(ERROR_MESSAGES.noContent, blogElement)
+
+  // find the blog div + create a list from each type of blog
+  filteredBlogData.forEach((post) => {
+    const sectionDiv = getOrCreateSectionDiv(post[groupByValue])
+    addBlogItem(sectionDiv, post)
+  })
+}
+
+function filterBlogData(blogData, filterText) {
+  return blogData.filter((post) => {
     return (
       post.title.toUpperCase().includes(filterText.toUpperCase()) ||
       post.section.toUpperCase().includes(filterText.toUpperCase()) ||
       post.sprint.toUpperCase().includes(filterText.toUpperCase())
     )
   })
-
-  if (filteredData.length > 0) {
-    return filteredData
-  } else {
-    return [
-      {
-        id: 0,
-        url: '',
-        title: `Sorry, no blog articles found for the search '${filterText}'.`,
-        section: '',
-        sprint: '',
-      },
-    ]
-  }
 }
 
-async function blog(blogElementId, blogDataJSON) {
-  const response = await fetch(blogDataJSON)
-  const fullBlogData = await response.json()
-  // console.table(blogData)
-
-  const blogData =
-    filterBy.length > 0 ? filterBlogs(fullBlogData, filterBy) : fullBlogData
-
-  // find the blog div + create a list from each type of blog
-  const blogElement = document.getElementById(blogElementId)
-  blogData.forEach((post) => {
-    const sectionDiv = getSectionDiv(blogElement, post[groupByValue])
-    addBlogItem(sectionDiv, post)
-  })
-}
-
-function getSectionDiv(blogElement, section) {
+function getOrCreateSectionDiv(section) {
   // find element or return null
-  let sectionList = document.getElementById(`ul${section}`)
+  let sectionDiv = document.getElementById(`ul${section}`)
 
-  // if null then create them
-  if (!sectionList) {
-    sectionContainer = blogElement.appendChild(document.createElement('div'))
-    sectionContainer.classList.add('section')
-
-    headingDiv = sectionContainer.appendChild(document.createElement('div'))
-    headingDiv.innerHTML = section
-    headingDiv.classList.add('t-2', 'pb-1')
-
-    sectionList = sectionContainer.appendChild(document.createElement('ul'))
-    sectionList.setAttribute('id', `ul${section}`)
+  // if null then create
+  if (!sectionDiv) {
+    const sectionContainer = createSectionContainer(section)
+    sectionDiv = createSectionList(sectionContainer, section)
   }
+  return sectionDiv
+}
+
+function createSectionList(sectionContainer, section) {
+  const sectionList = sectionContainer.appendChild(document.createElement('ul'))
+  sectionList.setAttribute('id', `ul${section}`)
   return sectionList
+}
+
+function createSectionContainer(section) {
+  const sectionContainer = blogElement.appendChild(
+    document.createElement('div')
+  )
+  sectionContainer.classList.add('section')
+
+  const headingDiv = sectionContainer.appendChild(document.createElement('div'))
+  headingDiv.innerHTML = section
+  headingDiv.classList.add('t-2', 'pb-1')
+
+  return sectionContainer
 }
 
 function addBlogItem(sectionDiv, post) {
