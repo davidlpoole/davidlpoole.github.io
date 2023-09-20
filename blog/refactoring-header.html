@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>How to use templates | dlp</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="How to use template files with vanilla javascript"
+    />
+    <link href="/styles/main.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header" class="header"></div>
+
+    <div class="p-3 max-width-60">
+      <h1>
+        Simplifying Template Loading with vanilla JavaScript: A Modular Approach
+      </h1>
+      <h3>20 September 2023</h3>
+
+      <hr />
+
+      <p>
+        In modern web development, simplicity, reusability, and maintainability
+        are vital components of writing efficient and effective code. When
+        building a website or a web application, especially one with multiple
+        pages, finding a way to minimize code redundancy while maintaining an
+        organized codebase is essential. In this blog post, we'll discuss a
+        method to dynamically load templates using Vanilla JavaScript, which
+        I've used on this site to load the header on every page.
+      </p>
+
+      <h2>The Challenge: Code Repetition</h2>
+
+      <p>
+        One common issue when creating a website is code duplication.
+        Specifically, duplicating code for components like headers, footers, or
+        other repeated elements across multiple pages. This redundancy not only
+        clutters the code but also makes it difficult to manage and update.
+      </p>
+
+      <h2>The Solution: Dynamic Template Loading with Vanilla JavaScript</h2>
+
+      <p>
+        To address this challenge, we can use Vanilla JavaScript to dynamically
+        load templates into different parts of our webpage without duplicating
+        the actual code. Let's break down the steps to achieve this:
+      </p>
+
+      <h3>1. Creating a Reusable Function</h3>
+
+      <p>
+        Start by creating a reusable JavaScript function that loads a template
+        into a specified element on a webpage. This function takes two
+        parameters:
+      </p>
+      <ul>
+        <li>the target element's ID</li>
+        <li>the URL of the template file</li>
+      </ul>
+      <pre><code class="javascript">
+// script.js
+
+function loadTemplate(elementId, url) {
+  const element = document.getElementById(elementId);
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
+      element.innerHTML = xhr.responseText;
+    }
+  };
+  xhr.send();
+}
+    </code></pre>
+      <hr />
+      <h3>2. Applying the Function</h3>
+
+      <p>
+        Now, you can use this function to load templates into various parts of
+        your webpage. For example a header and a footer.
+      </p>
+      <p>
+        First create a div with an appropriate id, load the script, then call
+        the loadTemplate() function with the id and path to the template file.
+      </p>
+
+      <pre><code class="html">
+&lt;!-- index.html --&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;title&gt;Your Website&lt;/title&gt;
+  &lt;link rel="stylesheet" type="text/css" href="styles.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;!-- Load the header --&gt;
+  &lt;div id="header"&gt;&lt;/div&gt;                   &lt;!-- div with id --&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;         &lt;!-- load script --&gt;
+  &lt;script&gt;
+    loadTemplate('header', 'header.html');  &lt;!-- call function --&gt;
+  &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+    </code></pre>
+
+      <p>
+        Extract the header snippets into their own template file as follows:
+      </p>
+
+      <pre><code class="html">
+&lt;!-- header.html --&gt;
+
+&lt;div class="nav"&gt;
+  &lt;div&gt;
+    &lt;a class="title large" href="/index.html"&gt;Your Blog Name&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;!-- Other header content --&gt;
+&lt;/div&gt;
+    </code></pre>
+      <hr />
+      <h2>Conclusion</h2>
+
+      <p>
+        By creating a modular and reusable function for loading templates
+        dynamically, we simplify our codebase and improve its maintainability.
+        This method ensures that any changes to a template only need to be made
+        in one place, enhancing efficiency and simplifying the development
+        process. Consider applying similar techniques to other repetitive
+        elements in your project for a cleaner and more organized code
+        structure.
+      </p>
+
+      <hr />
+
+      <p><a href="/index.html" class="hide-print">Go back to home page</a></p>
+    </div>
+    <script src="/js/loadTemplate.js"></script>
+    <script>
+      loadTemplate('header', '/templates/header.html')
+    </script>
+  </body>
+</html>

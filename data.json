@@ -80,7 +80,14 @@
   {
     "id": 11,
     "url": "/blog/git-commands.html",
-    "title": "Git commands I always forget",
+    "title": "Undoing and Amending Commits in Git",
+    "section": "Technical",
+    "sprint": "Other"
+  },
+  {
+    "id": 12,
+    "url": "/blog/refactoring-header.html",
+    "title": "Using HTML templates in vanilla JavaScript",
     "section": "Technical",
     "sprint": "Other"
   }
