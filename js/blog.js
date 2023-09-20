@@ -25,22 +25,21 @@ function initializeBlog() {
 initializeBlog()
 
 async function displayBlog(blogDataJSON) {
-  const blogData = await fetchBlogData(blogDataJSON)
+  const blogData = await fetchData(blogDataJSON)
 
   const filteredBlogData =
-    filterBy.length > 0 ? filterBlogData(blogData, filterBy) : blogData
+    filterBy.length > 0 ? filterData(blogData, filterBy) : blogData
 
   if (filteredBlogData.length === 0)
     displayErrorText(ERROR_MESSAGES.noContent, blogElement)
   else {
     filteredBlogData.forEach((post) => {
-      const sectionDiv = getOrCreateSectionDiv(post[groupByValue])
-      addBlogItem(sectionDiv, post)
+      displayBlogItem(post)
     })
   }
 }
 
-async function fetchBlogData(blogDataJSON) {
+async function fetchData(blogDataJSON) {
   try {
     const response = await fetch(blogDataJSON)
     if (!response.ok) {
@@ -52,14 +51,33 @@ async function fetchBlogData(blogDataJSON) {
   }
 }
 
-function filterBlogData(blogData, filterText) {
-  return blogData.filter((post) => {
+function filterData(data, filterText) {
+  return data.filter((post) => {
     return (
       post.title.toUpperCase().includes(filterText.toUpperCase()) ||
       post.section.toUpperCase().includes(filterText.toUpperCase()) ||
       post.sprint.toUpperCase().includes(filterText.toUpperCase())
     )
   })
+}
+
+function displayBlogItem(post) {
+  const sectionDiv = getOrCreateSectionDiv(post[groupByValue])
+  const listItem = appendListItem(sectionDiv, post.id)
+  const link = appendLink(listItem, post.url, post.title)
+}
+
+function appendListItem(parent, id) {
+  const listItem = parent.appendChild(document.createElement('li'))
+  listItem.setAttribute('id', id)
+  return listItem
+}
+
+function appendLink(parent, url, innerText) {
+  const link = parent.appendChild(document.createElement('a'))
+  link.setAttribute('href', url)
+  link.innerText = innerText
+  return link
 }
 
 function getOrCreateSectionDiv(section) {
@@ -81,15 +99,6 @@ function createSectionDiv(section) {
   const sectionDiv = sectionContainer.appendChild(document.createElement('ul'))
   sectionDiv.setAttribute('id', `ul${section}`)
   return sectionDiv
-}
-
-function addBlogItem(sectionDiv, post) {
-  const listItem = sectionDiv.appendChild(document.createElement('li'))
-  listItem.setAttribute('id', post.id)
-
-  const link = listItem.appendChild(document.createElement('a'))
-  link.setAttribute('href', post.url)
-  link.innerHTML = post.title
 }
 
 function displayErrorText(errorText) {
