@@ -75,20 +75,20 @@
     "url": "/blog/prefers-color-scheme.html",
     "title": "CSS 'prefers-color-scheme' (light/dark mode)",
     "section": "Technical",
-    "sprint": "Other"
+    "sprint": "Sprint 2"
   },
   {
     "id": 11,
     "url": "/blog/git-commands.html",
     "title": "Undoing and Amending Commits in Git",
     "section": "Technical",
-    "sprint": "Other"
+    "sprint": "Sprint 1"
   },
   {
     "id": 12,
     "url": "/blog/refactoring-header.html",
     "title": "Using HTML templates in vanilla JavaScript",
     "section": "Technical",
-    "sprint": "Other"
+    "sprint": "Sprint 3"
   }
 ]
