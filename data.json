@@ -10,28 +10,28 @@
   {
     "id": 1,
     "url": "/blog/identity-values.html",
-    "title": "Exploration of Identity, Values, and Strengths",
+    "title": "Exploration of identity, values, and strengths",
     "section": "Core",
     "sprint": "Sprint 1"
   },
   {
     "id": 2,
     "url": "/blog/html-css.html",
-    "title": "CSS Margin, Border and Padding",
+    "title": "CSS margin, border and padding",
     "section": "Technical",
     "sprint": "Sprint 2"
   },
   {
     "id": 3,
     "url": "/blog/learning-plan.html",
-    "title": "Dev Academy Learning Plan",
+    "title": "Dev Academy learning plan",
     "section": "Core",
     "sprint": "Sprint 2"
   },
   {
     "id": 4,
     "url": "/blog/emotional-intelligence.html",
-    "title": "Emotional Intelligence Exploration",
+    "title": "Emotional Intelligence exploration",
     "section": "Core",
     "sprint": "Sprint 3"
   },
@@ -45,14 +45,14 @@
   {
     "id": 6,
     "url": "/blog/neuroplasticity.html",
-    "title": "Neuroplasticity and Growth Mindset",
+    "title": "Neuroplasticity and growth mindset",
     "section": "Core",
     "sprint": "Sprint 4"
   },
   {
     "id": 7,
     "url": "/blog/te-whare-tapa-wha.html",
-    "title": "'Te Whare Tapa Whā'  Wellbeing Plan",
+    "title": "'Te Whare Tapa Whā' wellbeing plan",
     "section": "Core",
     "sprint": "Sprint 4"
   },
@@ -66,7 +66,7 @@
   {
     "id": 9,
     "url": "#",
-    "title": "Foundations Reflection (coming soon)",
+    "title": "Foundations reflection (coming soon)",
     "section": "Core",
     "sprint": "Sprint 5"
   },
@@ -80,7 +80,7 @@
   {
     "id": 11,
     "url": "/blog/git-commands.html",
-    "title": "Undoing and Amending Commits in Git",
+    "title": "Undoing and amending commits in Git",
     "section": "Technical",
     "sprint": "Sprint 1"
   },
@@ -88,6 +88,13 @@
     "id": 12,
     "url": "/blog/refactoring-header.html",
     "title": "Using HTML templates in vanilla JavaScript",
+    "section": "Technical",
+    "sprint": "Sprint 3"
+  },
+  {
+    "id": 13,
+    "url": "/blog/links-from-json.html",
+    "title": "Using JavaScript and JSON to create lists",
     "section": "Technical",
     "sprint": "Sprint 3"
   }

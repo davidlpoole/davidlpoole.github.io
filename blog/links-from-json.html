@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Extracting post metadata into JSON file | dlp</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="How I extracted post metadata into a JSON file and inject it into my index.html"
+    />
+    <link href="/styles/main.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header" class="header"></div>
+
+    <div class="p-3 max-width-60">
+      <h1>Extracting metadata to JSON and creating links with JavaScript</h1>
+      <h3>20 September 2023</h3>
+
+      <hr />
+
+      <p>
+        As a web developer, organizing and presenting blog articles efficiently
+        is crucial for engaging the audience. Initially, I had blog post links
+        hardcoded into my HTML page, which worked, but maintaining it was
+        becoming a challenge. That's when I decided to leverage JavaScript and
+        JSON to automate the process of injecting post metadata into my HTML
+        page.
+      </p>
+
+      <h2>Step 1: Creating a data.json file</h2>
+
+      <p>
+        I started by creating a <span class="code">data.json</span> file, where
+        I stored metadata for each blog post. The structure included the post
+        name and its corresponding URL. Here's a simple example:
+      </p>
+
+      <pre>
+  <code class="language-json">
+{
+  "id": 1,
+  "name": "Blog Post 1",
+  "url": "blog-post-1.html"
+},
+{
+  "id": 2,
+  "name": "Blog Post 2",
+  "url": "blog-post-2.html"
+}
+  </code>
+  </pre>
+
+      <h2>Step 2: Fetching and Parsing JSON Data in JavaScript</h2>
+
+      <p>
+        Next, I utilized JavaScript to fetch and parse the
+        <span class="code">data.json</span> file. I used the
+        <span class="code">fetch</span> API to retrieve the JSON data and then
+        parsed it using <span class="code">JSON.parse</span>:
+      </p>
+
+      <pre>
+  <code class="language-javascript">
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    // Process data here
+  })
+  .catch(error => console.error('Error fetching data:', error));
+  </code>
+  </pre>
+
+      <h2>Step 3: Generating HTML Markup and injecting HTML into the Page</h2>
+
+      <p>
+        Once I had the data in JavaScript, I looped through it to generate HTML
+        markup for each blog post. I created
+        <span class="code">&lt;a&gt;</span> elements with appropriate attributes
+        and inner content based on the data. Finally, I selected the target HTML
+        element (in this case, a div with the id 'blog-list') where I wanted to
+        inject the generated HTML and appended the created elements:
+      </p>
+
+      <pre>
+  <code class="language-javascript">
+  const blogList = document.getElementById('blog-list');  // is a &lt;ul&gt;
+  
+  data.forEach(post => {
+    const listItem = document.createElement('li');
+    listItem.id = post.id;
+
+    const postLink = document.createElement('a');
+    postLink.href = post.url;
+    postLink.textContent = post.name;
+    
+    listItem.appendChild(postLink);
+    blogList.appendChild(listItem);
+  });
+  </code>
+  </pre>
+
+      <h2>Conclusion</h2>
+
+      <p>
+        By following these steps, I automated the process of displaying blog
+        post links based on the metadata stored in a
+        <span class="code">data.json</span> file. This approach significantly
+        improved maintainability and allowed for easy updates to the blog post
+        list.
+      </p>
+
+      <hr />
+
+      <p><a href="/index.html" class="hide-print">Go back to home page</a></p>
+    </div>
+    <script src="/js/loadTemplate.js"></script>
+    <script>
+      loadTemplate('header', '/templates/header.html')
+    </script>
+  </body>
+</html>
