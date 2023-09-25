@@ -64,7 +64,7 @@ function filterData(data, filterText) {
 function displayBlogItem(post) {
   const sectionDiv = getOrCreateSectionDiv(post[groupByValue])
   const listItem = appendListItem(sectionDiv, post.id)
-  const link = appendLink(listItem, post.url, post.title)
+  const link = appendLink(listItem, post)
 }
 
 function appendListItem(parent, id) {
@@ -73,10 +73,12 @@ function appendListItem(parent, id) {
   return listItem
 }
 
-function appendLink(parent, url, innerText) {
+function appendLink(parent, post) {
+  const { url, title, target } = post
   const link = parent.appendChild(document.createElement('a'))
   link.setAttribute('href', url)
-  link.innerText = innerText
+  link.innerText = title
+  if (target) link.target = target
   return link
 }
 

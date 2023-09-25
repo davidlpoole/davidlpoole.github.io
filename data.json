@@ -97,5 +97,27 @@
     "title": "Using JavaScript and JSON to create lists",
     "section": "Technical",
     "sprint": "Sprint 3"
+  },
+  {
+    "id": 14,
+    "url": "https://supreme-carnival-8pyp5r4.pages.github.io/",
+    "title": "Tic Tac Toe",
+    "section": "Apps/Games",
+    "sprint": "Sprint 5",
+    "target": "_blank"
+  },
+  {
+    "id": 15,
+    "url": "#",
+    "title": "JavaScript Carnival (coming soon)",
+    "section": "Apps/Games",
+    "sprint": "Sprint 5"
+  },
+  {
+    "id": 16,
+    "url": "#",
+    "title": "Calculator (coming soon)",
+    "section": "Apps/Games",
+    "sprint": "Sprint 5"
   }
 ]
