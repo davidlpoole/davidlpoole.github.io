@@ -108,13 +108,29 @@
   },
   {
     "id": 15,
+    "url": "https://sturdy-garbanzo-kq9rvy7.pages.github.io/inflate-the-unicorn/inflate-the-unicorn.html",
+    "title": "JavaScript Carnival (Part 1: Unicorns)",
+    "section": "Apps/Games",
+    "sprint": "Sprint 5",
+    "target": "_blank"
+  },
+  {
+    "id": 16,
+    "url": "https://sturdy-garbanzo-kq9rvy7.pages.github.io/whack-a-mole/whack-a-mole.html",
+    "title": "JavaScript Carnival (Part 2: Whack-A-Mole)",
+    "section": "Apps/Games",
+    "sprint": "Sprint 5",
+    "target": "_blank"
+  },
+  {
+    "id": 17,
     "url": "#",
-    "title": "JavaScript Carnival (coming soon)",
+    "title": "JavaScript Carnival Part 3 (coming soon)",
     "section": "Apps/Games",
     "sprint": "Sprint 5"
   },
   {
-    "id": 16,
+    "id": 18,
     "url": "#",
     "title": "Calculator (coming soon)",
     "section": "Apps/Games",
