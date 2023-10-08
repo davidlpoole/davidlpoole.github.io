@@ -126,7 +126,8 @@
     "url": "https://congenial-adventure-j53kyr8.pages.github.io/",
     "title": "Minesweeper",
     "section": "Apps/Games",
-    "sprint": "Sprint 5"
+    "sprint": "Sprint 5",
+    "target": "_blank"
   },
   {
     "id": 18,
@@ -134,5 +135,13 @@
     "title": "Calculator (coming soon)",
     "section": "Apps/Games",
     "sprint": "Sprint 5"
+  },
+  {
+    "id": 19,
+    "url": "https://davidlpoole.github.io/vineyard-manager/",
+    "title": "Vineyard Manager (work in progress)",
+    "section": "Apps/Games",
+    "sprint": "Sprint 6",
+    "target": "_blank"
   }
 ]
